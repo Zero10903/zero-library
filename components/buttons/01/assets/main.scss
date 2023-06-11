@@ -1,0 +1,49 @@
+@import './reset';
+
+.container {
+  min-height: 100vh;
+
+  background-color: #141414;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  padding: 1em 2em;
+  position: relative;
+  z-index: 1;
+
+  color: lightpink;
+
+  border: 2px solid lightpink;
+  border-radius: 0.7em;
+
+  transition: 0.5s color ease-out;
+
+  &::before {
+    content: '';
+    height: 100%;
+    width: 0%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    border-radius: 0.5em;
+
+    background-color: lightpink;
+
+    transition: 0.3s width ease-out;
+  }
+
+  &:hover {
+    color: #141414;
+
+    &::before {
+      width: 100%;
+    }
+  }
+}
