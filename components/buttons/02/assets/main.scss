@@ -1,0 +1,62 @@
+@import './sass/reset';
+
+.container {
+  min-height: 100vh;
+  background-color: #141414;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  padding: 1em 2em;
+  position: relative;
+  z-index: 1;
+
+  color: #f0f0f0;
+  transition: 0.5s color ease-in-out;
+
+  &::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    background-color: #f0f0f0;
+
+    transform: scale(0);
+    transition: 0.3s transform ease-out;
+  }
+  &::after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: -3px;
+    left: 0;
+    z-index: -1;
+
+    border-top: 3px solid #f0f0f0;
+    border-bottom: 3px solid #f0f0f0;
+
+    opacity: 0;
+    transform: scale(1.5);
+    transition: 0.3s transform ease-out, 0.3s opacity ease-out;
+  }
+
+  &:hover {
+    color: #141414;
+
+    &::before {
+      transform: scale(1);
+    }
+    &::after {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
