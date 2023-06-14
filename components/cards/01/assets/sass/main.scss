@@ -1,0 +1,37 @@
+@use './mixins/effect';
+@use './mixins/layout';
+@import './mixins/reset';
+
+$color-principal: #0b213840;
+
+.container {
+  min-height: 100vh;
+
+  @include layout.flex-center();
+  background: url('../images/background.svg') center/cover no-repeat;
+}
+
+.card {
+  width: min(350px, 90%);
+  padding: 0.5em;
+
+  box-shadow: 0 0 1em 1em $color-principal;
+  border-radius: 0.8em;
+
+  @include effect.glass();
+  @include layout.flex-center(column);
+
+  &__image {
+    border-radius: 0.4em;
+  }
+  &__title {
+    padding: 0.5em;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+  }
+  &__text {
+    padding: 0.5em 0em 0em 0.6em;
+    border-top: 1px solid black;
+  }
+}
