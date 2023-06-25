@@ -11,10 +11,11 @@
 }
 
 // Center an element using flexbox
-@mixin flex-center($gap: 0) {
+@mixin flex-center($direction: row, $gap: 0) {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: $direction;
 
   @if $gap != 0 {
     gap: $gap;
